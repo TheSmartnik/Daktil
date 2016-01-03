@@ -1,4 +1,4 @@
 class Verse
   include Lotus::Entity
-  attributes :title, :text
+  attributes :title, :text, :year
 end

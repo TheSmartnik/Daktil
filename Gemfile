@@ -9,9 +9,11 @@ gem 'slim'
 
 gem 'pg'
 
+gem 'pry'
+
 group :test do
   gem 'minitest'
-  gem 'rspec'
+  # gem 'rspec'
   gem 'capybara'
 end
 

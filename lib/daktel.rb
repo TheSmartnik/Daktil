@@ -41,6 +41,7 @@ Lotus::Model.configure do
       repository VerseRepository
       attribute :title, String
       attribute :text, String
+      attribute :year, Integer
     end
   end
 end.load!
