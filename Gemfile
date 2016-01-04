@@ -13,6 +13,7 @@ gem 'pry'
 
 group :test do
   gem 'minitest'
+  gem 'minitest-spec-context'
   # gem 'rspec'
   gem 'capybara'
 end

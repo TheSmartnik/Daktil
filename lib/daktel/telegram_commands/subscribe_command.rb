@@ -1,0 +1,3 @@
+class SubscribeCommand < BaseCommand
+
+end
