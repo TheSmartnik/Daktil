@@ -39,6 +39,8 @@ Lotus::Model.configure do
     collection :verses do
       entity Verse
       repository VerseRepository
+
+      attribute :id, Integer
       attribute :title, String
       attribute :text, String
       attribute :year, Integer

@@ -5,6 +5,5 @@ Lotus::Model.migration do
       column :title, String
       column :text, "text"
     end
-
   end
 end
