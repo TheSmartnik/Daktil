@@ -10,10 +10,14 @@ gem 'slim'
 gem 'pg'
 
 gem 'pry'
+gem 'rest-client'
+
 
 group :test do
   gem 'minitest'
   gem 'minitest-spec-context'
+  gem 'minitest-vcr'
+  gem 'webmock'
   # gem 'rspec'
   gem 'capybara'
 end

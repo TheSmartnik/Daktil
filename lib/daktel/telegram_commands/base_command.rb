@@ -1,9 +1,10 @@
+require 'rest-client'
 require_relative '../../config/command_responses.rb'
 
 class BaseCommand
 
-  def initialize(chat_id)
-    @chat_id = chat_id
+  def initialize(options)
+    @chat_id = options[:chat_id]
   end
 
   def execute
@@ -15,13 +16,18 @@ class BaseCommand
   end
 
   def url
+    'example.com'
   end
 
   def params
     {
       chat_id: @chat_id,
-      text: CommandResponses[command]
+      text: response_text
     }
+  end
+
+  def response_text
+    CommandResponses.text command
   end
 
   def command

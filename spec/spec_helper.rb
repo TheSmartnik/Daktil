@@ -3,6 +3,16 @@ ENV['LOTUS_ENV'] ||= 'test'
 
 require_relative '../config/environment'
 require 'minitest/autorun'
-require 'minitest/minitest-spec-context'
+require 'vcr'
+require 'minitest-vcr'
+require 'webmock'
+# require 'minitest/minitest-spec-context'
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/cassettes'
+  c.hook_into :webmock
+end
+
 
 Lotus::Application.preload!
+MinitestVcr::Spec.configure!

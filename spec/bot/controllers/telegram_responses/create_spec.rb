@@ -3,7 +3,7 @@ require_relative '../../../../apps/bot/controllers/telegram_responses/create'
 
 describe Bot::Controllers::TelegramResponses::Create do
   let(:action) { Bot::Controllers::TelegramResponses::Create.new }
-  describe 'commands' do
+  describe 'commands', :vcr do
     context 'message via direct message' do
       let(:params) {
         {
@@ -21,9 +21,10 @@ describe Bot::Controllers::TelegramResponses::Create do
         }
       }
 
-      context '/help' do
+      context '/subscribe' do
         before do
-          params[:chat].merge! text: "/help"
+          VCR.insert_cassette name
+          params[:message][:chat].merge! text: "/subscribe"
         end
 
         it "is successful" do
@@ -35,7 +36,7 @@ describe Bot::Controllers::TelegramResponses::Create do
       context '/start' do
       end
 
-      context '/subscribe' do
+      context '/hel' do
       end
 
       context '/unsubscribe' do
