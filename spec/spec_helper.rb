@@ -6,6 +6,8 @@ require 'minitest/autorun'
 require 'vcr'
 require 'minitest-vcr'
 require 'webmock'
+require 'pry'
+
 # require 'minitest/minitest-spec-context'
 
 VCR.configure do |c|

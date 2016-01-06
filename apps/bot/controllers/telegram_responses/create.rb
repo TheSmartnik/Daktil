@@ -1,10 +1,10 @@
 module Bot::Controllers::TelegramResponses
   class Create
     include Bot::Action
-    require 'pry'
 
     def call(params)
-      chat_params = params['message']['chat']
+      chat_params = Hash params['message']['chat']
+      chat_params['chat_id'] = chat_params.delete('id')
       return FailCommand.new(chat_params) unless valid?
       "#{command.capitalize}Command".constantize.new(chat_params).execute
     end

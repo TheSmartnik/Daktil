@@ -31,21 +31,12 @@ Lotus::Model.configure do
   #
   # You can specify mapping file to load with:
   #
-  # mapping "#{__dir__}/config/mapping"
   #
   # Alternatively, you can use a block syntax like the following:
   #
-  mapping do
-    collection :verses do
-      entity Verse
-      repository VerseRepository
 
-      attribute :id, Integer
-      attribute :title, String
-      attribute :text, String
-      attribute :year, Integer
-    end
-  end
+  mapping "#{__dir__}/config/mapping"
+
 end.load!
 
 Lotus::Mailer.configure do

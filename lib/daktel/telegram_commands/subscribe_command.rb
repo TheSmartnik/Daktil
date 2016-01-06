@@ -10,12 +10,25 @@ class SubscribeCommand < BaseCommand
 
   def execute
     return send_failure_message unless valid_format?
-    create_user
+    persist_user
     super
   end
 
-  def create_user
-    UserRepository.create(User.new @user_attrs.merge deliver_at: deliver_time)
+  private
+
+  def persist_user
+    attrs = @user_attrs.merge deliver_at: deliver_time,
+      origin: "telegram:#{@user_attrs['type']}"
+
+    UserRepository.persist update_or_initialize_user(attrs)
+  end
+
+  def update_or_initialize_user(attrs)
+
+    user = UserRepository.find_by_chat_id @chat_id
+    return User.new(attrs) if user.blank?
+    user.update(attrs)
+    user
   end
 
   def deliver_time

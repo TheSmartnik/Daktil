@@ -4,7 +4,7 @@ require_relative '../../config/command_responses.rb'
 class BaseCommand
 
   def initialize(options)
-    @chat_id = options[:chat_id]
+    @chat_id = options['chat_id']
   end
 
   def execute
