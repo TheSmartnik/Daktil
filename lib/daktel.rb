@@ -1,5 +1,6 @@
 require 'lotus/model'
 require 'lotus/mailer'
+require 'pry'
 Dir["#{ __dir__ }/daktel/**/*.rb"].each { |file| require_relative file }
 
 Lotus::Model.configure do

@@ -7,9 +7,13 @@ gem 'lotusrb',     '0.5.0'
 gem 'lotus-model', '~> 0.5'
 gem 'slim'
 
+gem 'redis', '~>3.2'
+gem 'sidekiq'
+
 gem 'pg'
 
 gem 'pry'
+
 gem 'rest-client'
 
 

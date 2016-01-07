@@ -19,3 +19,12 @@ collection :verses do
   attribute :text, String
   attribute :year, Integer
 end
+
+collection :scheduled_verses do
+  entity ScheduledVerse
+  repository ScheduledVerseRepository
+
+  attribute :id, Integer
+  attribute :verse_id, Integer
+  attribute :delivery_date, Date
+end
