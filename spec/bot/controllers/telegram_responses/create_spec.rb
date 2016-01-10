@@ -55,12 +55,18 @@ describe Bot::Controllers::TelegramResponses::Create do
       end
 
       context '/start' do
+        before { params[:message][:chat].merge! text: '/start' }
+        it { action.call(params) }
       end
 
-      context '/hel' do
+      context '/help' do
+        before { params[:message][:chat].merge! text: '/help' }
+        it { action.call(params) }
       end
 
       context '/unsubscribe' do
+        before { params[:message][:chat].merge! text: '/unsubscribe' }
+        it { action.call(params) }
       end
     end
   end
