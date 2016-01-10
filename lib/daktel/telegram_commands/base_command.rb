@@ -16,7 +16,7 @@ class BaseCommand
   end
 
   def url
-    'example.com'
+    ENV['BOT_URL']
   end
 
   def params
