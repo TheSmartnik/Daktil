@@ -3,7 +3,7 @@ require_relative 'base_command'
 class SendVerseCommand < BaseCommand
 
   def initialize(options)
-    @text = options[:text]
+    @text = options['text']
   end
 
   def params
