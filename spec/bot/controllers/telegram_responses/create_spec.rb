@@ -27,7 +27,7 @@ describe Bot::Controllers::TelegramResponses::Create do
           VCR.insert_cassette name
           UserRepository.clear
 
-          params[:message][:chat].merge! text: '/subscribe'
+          params[:message].merge! text: '/subscribe'
         end
 
         it "is successful" do
@@ -43,7 +43,7 @@ describe Bot::Controllers::TelegramResponses::Create do
         context 'when user updates delivery time' do
           before do
             UserRepository.create User.new(chat_id: 1, deliver_at: '9 00')
-            params[:message][:chat].merge! text: '/subscribe 7 30'
+            params[:message].merge! text: '/subscribe 7 30'
           end
 
           it 'update delivery time' do
@@ -55,17 +55,17 @@ describe Bot::Controllers::TelegramResponses::Create do
       end
 
       context '/start' do
-        before { params[:message][:chat].merge! text: '/start' }
+        before { params[:message].merge! text: '/start' }
         it { action.call(params) }
       end
 
       context '/help' do
-        before { params[:message][:chat].merge! text: '/help' }
+        before { params[:message].merge! text: '/help' }
         it { action.call(params) }
       end
 
       context '/unsubscribe' do
-        before { params[:message][:chat].merge! text: '/unsubscribe' }
+        before { params[:message].merge! text: '/unsubscribe' }
         it { action.call(params) }
       end
     end
