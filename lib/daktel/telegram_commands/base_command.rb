@@ -12,7 +12,7 @@ class BaseCommand
   end
 
   def send_response
-    puts params.inspect
+    fail if @chat_id.blank?
     RestClient.post url, params
   end
 

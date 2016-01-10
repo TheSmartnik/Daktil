@@ -4,6 +4,7 @@ class SendVerseCommand < BaseCommand
 
   def initialize(options)
     @text = options['text']
+    super
   end
 
   def params
