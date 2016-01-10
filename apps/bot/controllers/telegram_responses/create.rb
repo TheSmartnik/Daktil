@@ -13,6 +13,7 @@ module Bot::Controllers::TelegramResponses
     private
 
     def valid?
+      puts params.inspect
       text = params['message']['chat']['text']
       return unless text.start_with?('/')
       CommandResponses.text(command)
