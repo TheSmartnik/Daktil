@@ -22,7 +22,8 @@ class BaseCommand
   def params
     {
       chat_id: @chat_id,
-      text: response_text
+      text: response_text,
+      parse_mode: 'markdown'
     }
   end
 

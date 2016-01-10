@@ -1,1 +1,1 @@
-resources :telegram_reponses
+resources :telegram_responses
