@@ -12,6 +12,7 @@ class BaseCommand
   end
 
   def send_response
+    puts params.inspect
     RestClient.post url, params
   end
 
