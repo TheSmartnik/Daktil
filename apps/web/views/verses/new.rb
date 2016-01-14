@@ -4,19 +4,22 @@ module Web::Views::Verses
     include Lotus::Helpers
 
     def form_for_a_verse
-      form_for :verse, '/verses' do
-        div class: 'input' do
-          label :title
-          text_field :title
-        end
+      form_for :verse, '/verses', class: 'forms' do
+        fieldset do
+          legend 'Add verse'
 
-        div class: 'input' do
-          label :text
-          text_area :text
-        end
+          section  do
+            label :title
+            text_field :title
+          end
 
-        div class: 'controls' do
-          submit 'Create Verse'
+          section do
+            label :text
+            text_area :text
+          end
+          div class: 'controls' do
+            submit 'Create Verse'
+          end
         end
       end
     end
