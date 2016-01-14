@@ -1,6 +1,5 @@
 require_relative 'worker_helper.rb'
 
-
 class VerseSchedulerWorker
   include Sidekiq::Worker
 

@@ -1,4 +1,4 @@
-require_relative '../../config/command_responses.rb'
+repqpuire_relative 'base_command'
 
 class FailCommand < BaseCommand
 end

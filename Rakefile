@@ -13,6 +13,6 @@ namespace :verse_scheduler do
   task :start do
     require 'sidekiq'
     require_relative 'lib/daktel/workers/verse_scheduler_worker'
-    VerseSchedulerWorker.perform_async
+    VerseSchedulerWorker.new.perform
   end
 end
