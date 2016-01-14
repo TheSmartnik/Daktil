@@ -22,6 +22,12 @@ describe Bot::Controllers::TelegramResponses::Create do
         }
       }
 
+      context 'gibberish' do
+        before { params[:message].merge! text: '/foo_bar' }
+
+        it { action.call(params) }
+      end
+
       context '/subscribe' do
         before do
           VCR.insert_cassette name

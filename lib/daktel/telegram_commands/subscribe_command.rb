@@ -40,7 +40,7 @@ class SubscribeCommand < BaseCommand
   end
 
   def send_failure_message
-    FailCommand.new(@user_attrs, reason: :wrong_format).execute
+    FailCommand.new(@user_attrs).execute
   end
 
   def response_text
