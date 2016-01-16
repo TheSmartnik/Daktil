@@ -1,0 +1,8 @@
+- verses.each_slice(3) do |verse_row|
+  row{around}
+    - verse_row.each do |verse|
+      column{cols= 3}
+        blockquote
+          h5= verse[:title]
+          p= verse[:text]
+          cite= verse[:delivery_date]
