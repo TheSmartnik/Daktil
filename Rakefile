@@ -11,8 +11,7 @@ task spec: :test
 
 namespace :verse_scheduler do
   task :start do
-    require 'sidekiq'
-    require_relative 'lib/daktel/workers/verse_scheduler_worker'
-    VerseSchedulerWorker.new.perform
+    require_relative 'config/environment'
+    VerseJobsScheduler.new.perform
   end
 end
