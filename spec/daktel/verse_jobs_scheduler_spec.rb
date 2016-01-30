@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe VerseSchedulerWorker do
+describe VerseJobsScheduler do
   before do
     #TODO: Что-то с этим сделать \/
     UserRepository.clear
@@ -14,6 +14,17 @@ describe VerseSchedulerWorker do
   end
 
   it 'raises no errors' do
-    VerseSchedulerWorker.new.perform
+    VerseJobsScheduler.new.perform
+  end
+
+  context 'verse has to be scheduled' do
+    before do
+      ScheduledVerseRepository.clear
+    end
+
+    it do
+      VerseJobsScheduler.new.perform
+      ScheduledVerseRepository.all.count.must_equal 1
+    end
   end
 end
