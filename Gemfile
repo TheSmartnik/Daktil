@@ -9,6 +9,7 @@ gem 'slim'
 
 gem 'redis', '~>3.2'
 gem 'sidekiq'
+gem 'sidetiq'
 
 gem 'pg'
 

@@ -1,4 +1,10 @@
-class VerseJobsScheduler
+require_relative 'worker_helper.rb'
+
+class ScheduleVerseJobsWorker
+  include Sidekiq::Worker
+  include Sidetiq::Schedulable
+
+  recurrence { daily.hour_of_day(12).minute_of_hour(5) }
 
   def perform
     UserRepository.all.each do |u|
