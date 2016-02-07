@@ -8,23 +8,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    celluloid (0.17.2)
-      celluloid-essentials
-      celluloid-extras
-      celluloid-fsm
-      celluloid-pool
-      celluloid-supervision
-      timers (>= 4.1.1)
-    celluloid-essentials (0.20.5)
-      timers (>= 4.1.1)
-    celluloid-extras (0.20.5)
-      timers (>= 4.1.1)
-    celluloid-fsm (0.20.5)
-      timers (>= 4.1.1)
-    celluloid-pool (0.20.5)
-      timers (>= 4.1.1)
-    celluloid-supervision (0.20.5)
-      timers (>= 4.1.1)
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
     coderay (1.1.0)
     connection_pool (2.2.0)
     crack (0.4.2)
@@ -99,7 +84,7 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     rake (10.4.2)
-    redis (3.2.1)
+    redis (3.2.2)
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
     rest-client (1.8.0)
@@ -110,8 +95,8 @@ GEM
     sequel (4.29.0)
     shotgun (0.9.1)
       rack (>= 1.0)
-    sidekiq (3.5.1)
-      celluloid (~> 0.17.2)
+    sidekiq (3.4.2)
+      celluloid (~> 0.16.0)
       connection_pool (~> 2.2, >= 2.2.0)
       json (~> 1.0)
       redis (~> 3.2, >= 3.2.1)
@@ -127,7 +112,7 @@ GEM
     temple (0.7.6)
     thor (0.19.1)
     tilt (2.0.1)
-    timers (4.1.1)
+    timers (4.0.4)
       hitimes
     unf (0.1.4)
       unf_ext
@@ -158,7 +143,7 @@ DEPENDENCIES
   rake
   redis (~> 3.2)
   rest-client
-  sidekiq
+  sidekiq (~> 3.4.2)
   sidetiq
   slim
   webmock

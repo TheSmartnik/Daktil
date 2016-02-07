@@ -8,7 +8,7 @@ gem 'lotus-model', '~> 0.5'
 gem 'slim'
 
 gem 'redis', '~>3.2'
-gem 'sidekiq'
+gem 'sidekiq', '~> 3.4.2'
 gem 'sidetiq'
 
 gem 'pg'
