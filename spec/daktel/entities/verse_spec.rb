@@ -8,4 +8,16 @@ describe Verse do
       verse.send(k).must_equal attrs[k]
     end
   end
+
+  it 'returns in the right format' do
+    verse = Verse.new(title: 'Тучи', text: 'Тучки небесные')
+
+    verse.verse_with_markdown.must_equal(
+<<-EOF
+Тучи
+
+Тучки небесные
+EOF
+)
+  end
 end
