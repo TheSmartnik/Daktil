@@ -1,8 +1,17 @@
-- verses.each_slice(3) do |verse_row|
-  row{around}
-    - verse_row.each do |verse|
-      column{cols= 3}
-        blockquote
-          h5= verse[:title]
-          p= verse[:text]
-          cite= verse[:delivery_date]
+table.table-responsive.table-stripped
+  thead
+    tr
+      th
+      th Delivery Date
+      th Name
+      th Text
+      td
+  tbody
+    - verses.each_with_index do |verse, index|
+      tr
+        td
+          span.label{outline}= index + 1
+        td= verse[:delivery_date]
+        td= verse[:title]
+        td= verse[:text].to_s[0..60]
+        td link
