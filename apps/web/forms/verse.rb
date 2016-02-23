@@ -33,7 +33,7 @@ module Web::Forms
         hidden_field :id, value: verse.id
 
         div class: 'controls' do
-          submit 'Destruction'
+          submit 'DELETE'
         end
       end
     end
