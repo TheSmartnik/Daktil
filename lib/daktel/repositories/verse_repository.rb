@@ -3,7 +3,7 @@ class VerseRepository
   # TODO:Разобраться с джоинами, а то хуйня какая-то
 
   def self.verses_with_delivery_date
-    fetch("SELECT verses.id, title, year, text, delivery_date
+    fetch("SELECT DISTINCT ON (verses.id) verses.id, title, year, text, delivery_date
             FROM verses
             LEFT OUTER JOIN scheduled_verses
             ON verses.id=scheduled_verses.verse_id")

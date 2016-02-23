@@ -1,10 +1,10 @@
 module Web::Controllers::Verses
-  class Create
+  class Edit
     include Web::Action
+    expose :verse
 
     def call(params)
-      VerseRepository.create Verse.new(params[:verse])
-      redirect_to '/'
+      @verse = VerseRepository.find(params[:id])
     end
   end
 end
