@@ -1,7 +1,6 @@
 module CommandResponses
 
   def text(command, options = {})
-    return responses(options)[:fail] if command.blank?
     responses(options)[command.to_sym]
   end
 
