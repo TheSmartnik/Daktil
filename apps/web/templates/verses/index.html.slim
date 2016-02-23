@@ -14,4 +14,4 @@ table.table-responsive.table-stripped
         td= verse[:delivery_date]
         td= verse[:title]
         td= verse[:text].to_s[0..100] + "..."
-        td== link_to 'edit', "verses/edit/#{verse[:id]}"
+        td== link_to 'edit', "/verses/edit/#{verse[:id]}"
