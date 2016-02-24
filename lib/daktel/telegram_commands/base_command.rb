@@ -13,7 +13,7 @@ class BaseCommand
 
   def send_response
     fail if @chat_id.blank?
-    RestClient.post url, params
+    RestClient.post(url, params) rescue nil
   end
 
   def url
