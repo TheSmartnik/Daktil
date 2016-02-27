@@ -36,7 +36,12 @@ class SubscribeCommand < BaseCommand
   end
 
   def valid_format?
-    @user_attrs['text'][/\/subscribe((\s\d{1,2}){2}|)\z/]
+    @user_attrs['text'][/\/subscribe((\s\d{1,2}){2}|)\z/] && delivery_time_in_range?
+  end
+
+  def delivery_time_in_range?
+    hours, minutes = delivery_time.split(" ")
+    (0..24).cover?(Integer hours) && (0..60).cover?(Integer minutes)
   end
 
   def send_failure_message
