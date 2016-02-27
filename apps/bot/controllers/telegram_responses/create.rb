@@ -23,7 +23,7 @@ module Bot::Controllers::TelegramResponses
 
     def valid?
       text = params['message']['text']
-      return if command.blank?
+      return if text.blank?
       return unless text.start_with?('/')
       CommandResponses.text(command)
     end
