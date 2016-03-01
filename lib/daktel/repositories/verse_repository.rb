@@ -15,6 +15,6 @@ class VerseRepository
             LEFT OUTER JOIN scheduled_verses
             ON verses.id=scheduled_verses.verse_id
             WHERE delivery_date IS NULL
-            ORDER BY verse.id DESC")
+            ORDER BY verses.id DESC")
   end
 end
