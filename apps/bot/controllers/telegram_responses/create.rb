@@ -8,7 +8,7 @@ module Bot::Controllers::TelegramResponses
 
       execute_command(chat_params)
 
-      status 200, "All good"
+      status 200, 'All good'
     end
 
     private

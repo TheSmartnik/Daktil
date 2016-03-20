@@ -1,5 +1,5 @@
 class VerseRepository
-  include Lotus::Repository
+  include Hanami::Repository
   # TODO:Разобраться с джоинами, а то хуйня какая-то
 
   def self.verses_with_delivery_date

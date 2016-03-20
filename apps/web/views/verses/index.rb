@@ -1,8 +1,6 @@
 module Web::Views::Verses
   class Index
     include Web::View
-    include Lotus::Helpers
-
-
+    include Hanami::Helpers
   end
 end

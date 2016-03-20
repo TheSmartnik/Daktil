@@ -4,8 +4,8 @@ module Web::Controllers::Verses
     expose :verse
 
     def call(params)
-      VerseRepository.delete VerseRepository.find(params["verse"]["id"])
-      redirect_to "/verses"
+      VerseRepository.delete VerseRepository.find(params['verse']['id'])
+      redirect_to '/verses'
     end
   end
 end

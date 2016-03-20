@@ -1,5 +1,5 @@
 # Require this file for unit tests
-ENV['LOTUS_ENV'] ||= 'test'
+ENV['HANAMI_ENV'] ||= 'test'
 
 require_relative '../config/environment'
 require 'minitest/autorun'
@@ -16,6 +16,5 @@ VCR.configure do |c|
   c.hook_into :webmock
 end
 
-
-Lotus::Application.preload!
+Hanami::Application.preload!
 MinitestVcr::Spec.configure!

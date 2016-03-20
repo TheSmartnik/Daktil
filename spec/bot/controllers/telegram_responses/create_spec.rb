@@ -5,7 +5,7 @@ describe Bot::Controllers::TelegramResponses::Create do
   let(:action) { Bot::Controllers::TelegramResponses::Create.new }
   describe 'commands', :vcr do
     context 'message via direct message' do
-      let(:params) {
+      let(:params) do
         {
           message: {
             from: {
@@ -20,7 +20,7 @@ describe Bot::Controllers::TelegramResponses::Create do
             }
           }
         }
-      }
+      end
 
       context 'gibberish' do
         before { params[:message].merge! text: '/foo_bar' }
@@ -36,7 +36,7 @@ describe Bot::Controllers::TelegramResponses::Create do
           params[:message].merge! text: '/subscribe'
         end
 
-        it "is successful" do
+        it 'is successful' do
           response = action.call(params)
           response[0].must_equal 200
         end

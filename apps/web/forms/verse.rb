@@ -1,6 +1,6 @@
 module Web::Forms
   module Verse
-    include Lotus::Helpers
+    include Hanami::Helpers
 
     def form_for_a_verse
       form_for :verse, '/verses', method: :patch, class: 'forms' do
@@ -11,7 +11,7 @@ module Web::Forms
             hidden_field :id, value: verse.id
           end
 
-          section  do
+          section do
             label :title
             text_field :title, value: verse.title
           end
@@ -38,5 +38,4 @@ module Web::Forms
       end
     end
   end
-
 end

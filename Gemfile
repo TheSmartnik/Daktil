@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 gem 'bundler'
 gem 'rake'
 
-gem 'lotusrb',     '0.5.0'
-gem 'lotus-model', '~> 0.5'
+gem 'hanami', '0.7.2'
+gem 'hanami-model'
 gem 'slim'
 
 gem 'redis', '~>3.2'
@@ -17,6 +17,9 @@ gem 'pry'
 
 gem 'rest-client'
 
+group :developmend do
+  gem 'rubocop'
+end
 
 group :test do
   gem 'minitest'

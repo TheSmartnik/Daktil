@@ -1,4 +1,4 @@
 class ScheduledVerse
-  include Lotus::Entity
+  include Hanami::Entity
   attributes :verse_id, :delivery_date
 end

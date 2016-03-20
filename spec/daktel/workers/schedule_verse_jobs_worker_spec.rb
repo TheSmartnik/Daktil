@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ScheduleVerseJobsWorker do
   before do
-    #TODO: Что-то с этим сделать \/
+    # TODO: Что-то с этим сделать \/
     UserRepository.clear
     ScheduledVerseRepository.clear
     VerseRepository.clear

@@ -1,5 +1,4 @@
 module CommandResponses
-
   def text(command, options = {})
     responses(options)[command.to_sym]
   end

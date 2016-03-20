@@ -1,7 +1,7 @@
-require 'lotus/helpers'
+require 'hanami/helpers'
 
 module Bot
-  class Application < Lotus::Application
+  class Application < Hanami::Application
     configure do
       ##
       # BASIC
@@ -22,7 +22,7 @@ module Bot
 
       # Handle exceptions with HTTP statuses (true) or don't catch them (false).
       # Defaults to true.
-      # See: http://www.rubydoc.info/gems/lotus-controller/#Exceptions_management
+      # See: http://www.rubydoc.info/gems/hanami-controller/#Exceptions_management
       #
       # handle_exceptions true
 
@@ -31,7 +31,7 @@ module Bot
       #
 
       # Routes definitions for this application
-      # See: http://www.rubydoc.info/gems/lotus-router#Usage
+      # See: http://www.rubydoc.info/gems/hanami-router#Usage
       #
       routes 'config/routes'
 
@@ -124,11 +124,6 @@ module Bot
       #   'vendor/javascripts'
       # ]
 
-      # Enabling serving assets
-      # Defaults to false
-      #
-      # serve_assets false
-
       ##
       # SECURITY
       #
@@ -144,7 +139,7 @@ module Bot
       #   * https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options
       #   * https://www.owasp.org/index.php/Clickjacking
       #
-      security.x_frame_options "DENY"
+      security.x_frame_options 'DENY'
 
       # Content-Security-Policy (CSP) is a HTTP header supported by modern browsers.
       # It determines trusted sources of execution for dynamic contents
@@ -186,7 +181,7 @@ module Bot
       # Configure the code that will yield each time Bot::Action is included
       # This is useful for sharing common functionality
       #
-      # See: http://www.rubydoc.info/gems/lotus-controller#Configuration
+      # See: http://www.rubydoc.info/gems/hanami-controller#Configuration
       controller.prepare do
         # include MyAuthentication # included in all the actions
         # before :authenticate!    # run an authentication before callback
@@ -195,9 +190,9 @@ module Bot
       # Configure the code that will yield each time Bot::View is included
       # This is useful for sharing common functionality
       #
-      # See: http://www.rubydoc.info/gems/lotus-view#Configuration
+      # See: http://www.rubydoc.info/gems/hanami-view#Configuration
       view.prepare do
-        include Lotus::Helpers
+        include Hanami::Helpers
       end
     end
 
@@ -209,7 +204,6 @@ module Bot
       handle_exceptions false
 
       # Serve static assets during development
-      serve_assets      true
     end
 
     ##
@@ -220,7 +214,6 @@ module Bot
       handle_exceptions false
 
       # Serve static assets during development
-      serve_assets      true
     end
 
     ##

@@ -2,7 +2,6 @@ require 'rest-client'
 require_relative '../../config/command_responses.rb'
 
 class BaseCommand
-
   def initialize(options)
     @chat_id = options['chat_id']
   end
@@ -12,7 +11,7 @@ class BaseCommand
   end
 
   def send_response
-    fail if @chat_id.blank?
+    raise if @chat_id.blank?
     RestClient.post(url, params) rescue nil
   end
 
@@ -33,6 +32,6 @@ class BaseCommand
   end
 
   def command
-    self.class.to_s.downcase.gsub "command", ''
+    self.class.to_s.downcase.gsub 'command', ''
   end
 end

@@ -1,7 +1,7 @@
 require_relative 'base_command'
 
 class SubscribeCommand < BaseCommand
-  DEFAULT_TIME = '9 00'
+  DEFAULT_TIME = '9 00'.freeze
 
   def initialize(options)
     @user_attrs = options
@@ -31,7 +31,7 @@ class SubscribeCommand < BaseCommand
   end
 
   def delivery_time
-    time = @user_attrs['text'].gsub /\/subscribe\s?/, ''
+    time = @user_attrs['text'].gsub(/\/subscribe\s?/, '')
     time.blank? ? DEFAULT_TIME : time
   end
 
@@ -40,7 +40,7 @@ class SubscribeCommand < BaseCommand
   end
 
   def delivery_time_in_range?
-    hours, minutes = delivery_time.split(" ")
+    hours, minutes = delivery_time.split(' ')
     (0..24).cover?(Integer hours) && (0..60).cover?(Integer minutes)
   end
 

@@ -1,9 +1,9 @@
-require 'lotus/model'
-require 'lotus/mailer'
+require 'hanami/model'
+require 'hanami/mailer'
 require 'pry'
-Dir["#{ __dir__ }/daktel/**/*.rb"].each { |file| require_relative file }
+Dir["#{__dir__}/daktel/**/*.rb"].each { |file| require_relative file }
 
-Lotus::Model.configure do
+Hanami::Model.configure do
   ##
   # Database adapter
   #
@@ -37,13 +37,12 @@ Lotus::Model.configure do
   #
 
   mapping "#{__dir__}/config/mapping"
-
 end.load!
 
-Lotus::Mailer.configure do
-  root "#{ __dir__ }/daktel/mailers"
+Hanami::Mailer.configure do
+  root "#{__dir__}/daktel/mailers"
 
-  # See http://lotusrb.org/guides/mailers/delivery
+  # See http://hanamirb.org/guides/mailers/delivery
   delivery do
     development :test
     test        :test

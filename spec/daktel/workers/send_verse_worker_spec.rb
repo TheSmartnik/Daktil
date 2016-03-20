@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe SendVerseWorker do
-  let(:verse) { VerseRepository.create Verse.new(text: 'text')}
+  let(:verse) { VerseRepository.create Verse.new(text: 'text') }
   before { VCR.insert_cassette name }
 
   it 'aint raising errors' do

@@ -1,7 +1,6 @@
 require_relative 'base_command'
 
 class SendVerseCommand < BaseCommand
-
   def initialize(options)
     @text = options['text']
     super

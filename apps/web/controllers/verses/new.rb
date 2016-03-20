@@ -3,7 +3,7 @@ module Web::Controllers::Verses
     include Web::Action
     expose :verse
 
-    def call(params)
+    def call(_params)
       @verse = Verse.new
     end
   end

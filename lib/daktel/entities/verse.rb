@@ -1,5 +1,5 @@
 class Verse
-  include Lotus::Entity
+  include Hanami::Entity
   attributes :title, :text, :year
 
   def verse_with_markdown
