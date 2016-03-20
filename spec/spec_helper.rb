@@ -6,6 +6,7 @@ require 'minitest/autorun'
 require 'vcr'
 require 'minitest-vcr'
 require 'webmock'
+require 'sidekiq/api'
 require 'pry'
 
 # require 'minitest/minitest-spec-context'

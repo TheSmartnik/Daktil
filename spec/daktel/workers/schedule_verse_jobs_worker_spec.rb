@@ -13,18 +13,16 @@ describe ScheduleVerseJobsWorker do
       ScheduledVerse.new(verse_id: verse.id, delivery_date: Date.today)
   end
 
-  it 'raises no errors' do
-    ScheduleVerseJobsWorker.new.perform
-  end
-
   context 'verse has to be scheduled' do
     before do
       ScheduledVerseRepository.clear
+      Sidekiq::ScheduledSet.new.clear
     end
 
     it do
       ScheduleVerseJobsWorker.new.perform
       ScheduledVerseRepository.all.count.must_equal 1
+      Sidekiq::ScheduledSet.new.count.must_equal 1
     end
   end
 end
