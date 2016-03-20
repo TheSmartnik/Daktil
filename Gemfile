@@ -5,6 +5,7 @@ gem 'rake'
 
 gem 'hanami', '0.7.2'
 gem 'hanami-model'
+gem 'hanami-utils', git: 'https://github.com/TheSmartnik/utils', branch: 'fix_rses_ending'
 gem 'slim'
 
 gem 'redis', '~>3.2'
@@ -17,7 +18,7 @@ gem 'pry'
 
 gem 'rest-client'
 
-group :developmend do
+group :development do
   gem 'rubocop'
 end
 

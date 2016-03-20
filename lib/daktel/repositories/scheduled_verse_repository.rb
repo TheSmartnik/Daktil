@@ -6,4 +6,5 @@ class ScheduledVerseRepository
     return if scheduled.blank?
     VerseRepository.find scheduled.verse_id
   end
+
 end

@@ -11,7 +11,7 @@ table.table-responsive.table-stripped
       tr
         td
           span.label{outline}= index + 1
-        td= verse[:delivery_date]
-        td= verse[:title]
-        td= verse[:text].to_s[0..100] + "..."
-        td== link_to 'edit', "/verses/edit/#{verse[:id]}"
+        td= verse.delivery_date
+        td= verse.title
+        td= verse.text.to_s[0..100] + "..."
+        td== link_to 'edit', "/verses/edit/#{verse.id}"
