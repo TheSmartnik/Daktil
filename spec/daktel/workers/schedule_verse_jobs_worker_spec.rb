@@ -2,11 +2,6 @@ require 'spec_helper'
 
 describe ScheduleVerseJobsWorker do
   before do
-    # TODO: Что-то с этим сделать \/
-    UserRepository.clear
-    ScheduledVerseRepository.clear
-    VerseRepository.clear
-
     UserRepository.create User.new(deliver_at: '7 30')
     verse = VerseRepository.create Verse.new
     ScheduledVerseRepository.create \
@@ -14,11 +9,6 @@ describe ScheduleVerseJobsWorker do
   end
 
   context 'verse has to be scheduled' do
-    before do
-      ScheduledVerseRepository.clear
-      Sidekiq::ScheduledSet.new.clear
-    end
-
     it do
       ScheduleVerseJobsWorker.new.perform
       ScheduledVerseRepository.all.count.must_equal 1

@@ -27,8 +27,8 @@ group :test do
   gem 'minitest-spec-context'
   gem 'minitest-vcr'
   gem 'webmock'
-  # gem 'rspec'
   gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :production do

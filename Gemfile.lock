@@ -22,6 +22,7 @@ GEM
     connection_pool (2.2.0)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
+    database_cleaner (1.5.1)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.1.0)
@@ -157,6 +158,7 @@ PLATFORMS
 DEPENDENCIES
   bundler
   capybara
+  database_cleaner
   hanami (= 0.7.2)
   hanami-model
   hanami-utils!
